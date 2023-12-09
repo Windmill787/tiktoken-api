@@ -21,14 +21,10 @@ def index():
     # get text from form
     form = request.get_json()
 
-    print(form)
-
     if "text" not in form:
         return jsonify({'message': 'Text is empty'})
 
     text = form["text"]
-
-    print(text)
 
     encoding = tiktoken.encoding_for_model('gpt-3.5-turbo')
 
